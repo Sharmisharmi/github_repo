@@ -19,5 +19,8 @@
 //    }
 //}
 
-rootProject.name = "Animie Club"
+
+// client id -> Ov23liDudByRNDLpwLHc
+// client secret id -> fb72d185bb0f4622f976a620ad408783639a4952
+rootProject.name = "Ghithub Repo"
 include(":app")

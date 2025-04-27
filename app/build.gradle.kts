@@ -2,12 +2,13 @@ plugins {
     id ("com.android.application")
     id ("org.jetbrains.kotlin.android")
     id ("kotlin-kapt")
-//    id ("com.google.gms.google-services")
+    id ("com.google.gms.google-services")
     id ("kotlin-android")
+
 }
 
 android {
-    namespace = "com.example.animieclub"
+    namespace = "com.example.ghithubrepo"
     compileSdk = 34
 
     dataBinding{
@@ -27,7 +28,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.animieclub"
+        applicationId = "com.example.ghithubrepo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -72,8 +73,6 @@ dependencies {
     implementation ("com.google.android.material:material:1.6.1")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(libs.androidx.activity)
-//    implementation ("com.google.android.gms:play-services-location:21.0.0")
-//    implementation ("com.google.firebase:firebase-database-ktx:20.2.2")
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.3")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
@@ -87,12 +86,34 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.6.2")
     implementation("com.squareup.retrofit2:converter-scalars:2.6.2")
 
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.firebase:firebase-auth:22.3.0")
+    implementation ("com.google.android.gms:play-services-auth:21.1.0") // Google Sign-In
+
+
+    // Core AndroidX lifecycle and ViewModel
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+
+    // Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    // Room
+    implementation ("androidx.room:room-runtime:2.4.0")
+    kapt ("androidx.room:room-compiler:2.4.0")
+    implementation ("androidx.room:room-ktx:2.4.0")
+
     // Image
     implementation("de.hdodenhof:circleimageview:3.0.1")
     implementation ("com.squareup.picasso:picasso:2.8")
     implementation ("com.github.bumptech.glide:glide:4.9.0")                                        //Glide
 
-    implementation ("com.github.Kwasow:BottomNavigationCircles-Android:1.2")
-    implementation ("com.google.android.material:material:1.9.0")
-    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
+    implementation ("com.github.ybq:Android-SpinKit:1.4.0")
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+    implementation ("com.github.Elders:EldersSearchView:v1.4.1")
+
+
 }

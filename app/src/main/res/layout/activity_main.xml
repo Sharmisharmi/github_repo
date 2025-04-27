@@ -6,76 +6,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity"
+    android:background="#F3F1F1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/icon"/>
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="10dp"
+        android:weightSum="2">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Animie Club"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="30dp"
+            android:layout_weight="1.4"
+            android:text="Ghithub Repository"
+            android:textSize="20sp"
             android:textColor="@color/black"
-            android:textStyle="italic"
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center"
-            android:gravity="center"/>
+            android:fontFamily="@font/poppins_medium"/>
+
+        <ImageView
+            android:id="@+id/search_image"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight=".3"
+            android:src="@drawable/search_24"
+            android:layout_gravity="center"/>
+
+
+
+        <ImageView
+            android:id="@+id/signOut_image"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight=".3"
+            android:src="@drawable/tune_24"
+            android:layout_gravity="center"/>
+
+
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="180sp"
-        android:layout_marginTop="10sp"
-        android:id="@+id/recycler"
-        android:layout_marginHorizontal="8dp"
-        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"/>
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Animies"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="@color/red"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="25dp"
-        android:textSize="22dp"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/animies_recyclerView"
+    <com.eldersoss.elderssearchview.EldersSearchView
+        android:id="@+id/elders_search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"/>
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        app:esvHintText="Search for something"
+        android:visibility="gone"
+        />
+    <!-- RecyclerView to show the list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRepos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/noData_image"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        android:src="@drawable/no_data_found"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
-        <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
-            android:id="@+id/navigation_view"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_gravity="start|bottom"
-            app:circleColor="@color/red"
-            app:darkIcon="true"
-            android:background="@color/red"
-            app:backgroundShape="circle"
-            app:customBackgroundShape="@drawable/bg_custom"
-            app:menu="@menu/menu_bottom_navigation_bar"/>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="1500"
+        android:layout_margin="10dp">
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+       <include layout="@layout/list_shimmer"/>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
 
 </LinearLayout>

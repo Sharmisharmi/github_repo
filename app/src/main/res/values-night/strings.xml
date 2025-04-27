@@ -1,6 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Ghithub Repo</string>
     <string name="default_web_client_id">1026095043024-ls5kbimb825cqq6qpt1tc7310jd4qrt5.apps.googleusercontent.com</string>
     <string name="github_client_id">Ov23liDudByRNDLpwLHc</string>
     <string name="github_client_secret_id">fb72d185bb0f4622f976a620ad408783639a4952</string>
+
+
 </resources>

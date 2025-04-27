@@ -1,43 +1,28 @@
+plugins {
+    id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
+}
 buildscript {
-//    ext = '1.6.21'
-//    ext.lifecycle_version = '2.3.1'
-//    ext("1.6.21")
-//    plugins{
-//        kotlin("jvm") version ("1.6.21")
-//    }
-
     repositories {
         google()
-        maven {
-            url = uri("https://maven.google.com")
-        }
         mavenCentral()
-        maven {
-            url = uri("https://jitpack.io")
-        }
-
-        dependencies {
-            classpath("com.android.tools:r8:8.1.56")
-            classpath ("com.android.tools.build:gradle:8.1.0")
-            classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0")
-
-            // NOTE: Do not place your application dependencies here; they belong
-            // in the individual module build.gradle files
-        }
+        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://maven.google.com") }
     }
+
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0")
+        classpath("com.android.tools.build:gradle:8.1.0")
+        classpath("com.google.gms:google-services:4.4.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
+        classpath("com.android.tools:r8:8.1.56")
     }
+}
 
-    allprojects {
-        repositories {
-            maven { url = uri("https://jitpack.io") }
-            google()
-            mavenCentral()
-            jcenter()
-
-        }
-
+// This block should be outside buildscript
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        jcenter()
     }
-
 }
