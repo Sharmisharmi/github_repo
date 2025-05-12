@@ -4,6 +4,9 @@
 
 **Ghithub Repo** is a simple Android app to view, search, and cache GitHub repositories for a logged-in user, following modern Android best practices.
 
+
+<img src="app/src/main/assets/screen_shot.png" alt="App Screenshot" width="900"/>
+
 ## 1. Functionality
 
 - **Google Sign-In** using **Firebase Authentication**.
